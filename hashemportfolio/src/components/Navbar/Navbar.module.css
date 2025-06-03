@@ -1,60 +1,59 @@
-@import "../../vars.css";
 
-.navbar{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 61px;
+.navbar {
+    position: absolute;
+    top: 25%;
+    right: -18px; /* sticks out from notebook page */
     z-index: 2;
-    margin: 0 10%;
-}
-
-.title{
-    font-size: 30px;
-    font-weight: 600;
-    text-decoration: none;
-    color: var(--color-text);
-}
-.menu{
+  }
+  
+  .tabList {
     display: flex;
-}
-.menuItems{
-    display: flex;
-    gap: 47px;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
     list-style: none;
-}
-.menuItems a{
-    font-size: 25px;
-    color: var(--color-text);
+  }
+  
+  .tab {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+    background-color: #fffaaf;
+    border: 2px solid #bbb;
+    border-left: none;
+    border-radius: 8px 0 0 8px;
+    padding: 1rem 0.5rem;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #333;
     text-decoration: none;
-}
-@media screen and (max-width: 830px) {
-    .navbar{
-        flex-direction: column;
-        align-items: flex start;
-    }
-    .menu{
-        position: absolute;
-        right: 0;
-        margin-right: 10%;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 11px;
-        z-index: 3;
-    }
-    
-    .menuBtn{
-        display: block;
-        cursor: pointer;
-    }
-    .menuItems{
-        flex-direction: column;
-        align-items: center;
-        gap: 13px;
-        border-radius: 10px;
-        background: rgb(25, 55, 109);
-        background: linear-gradient(0deg, rgba(25, 55, 109, 0.2)0%, rgba(25, 55, 109,1) 100%);
-
-    }
-}
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 85% 100%, 0% 100%);
+  }
+  
+  .tab:hover {
+    background-color: #ffffff;
+    transform: scale(1.03) rotate(180deg);
+  }
+  .tabActive {
+    outline: 3px solid #444;
+  }
+  .about {
+    background-color: #f9d520; /* yellow */
+    border-color: #e1c74f;
+  }
+  
+  .projects {
+    background-color: #ff00f2; /* pink */
+    border-color: #d699a6;
+  }
+  
+  .experience {
+    background-color: #04f2ff; /* blue */
+    border-color: #7eb6d2;
+  }
+  

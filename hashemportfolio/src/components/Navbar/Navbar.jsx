@@ -1,30 +1,15 @@
-import React, {useState} from "react";
-import styles from "./Navbar.module.css"
-import { getImageUrl } from "../../utils";
+import styles from './Navbar.module.css';
 
-
-export const Navbar = () =>{
-    return (
+function Navbar() {
+  return (
     <nav className={styles.navbar}>
-        <a className={styles.title} href="/">Hashem Abdelati</a>
-        <div className={styles.menu}>
-        <img className={styles.menuBtn} src="/assets/nav/menuIcon.png" />
-        <ul className={styles.menuItems}>
-                <li> 
-                    <a href ="#about"> About</a>
-                </li>
-                <li> 
-                    <a href ="#experience"> Experience</a>
-                </li>
-                <li> 
-                    <a href ="#projects"> Project</a>
-                </li>
-                <li> 
-                    <a href ="#contact"> Contact</a>
-                </li>
-            </ul>
-        </div>
+      <ul className={styles.tabList}>
+        <li><a href="#about" className={`${styles.tab} ${styles.about}`}>About</a></li>
+        <li><a href="#projects" className={`${styles.tab} ${styles.projects}`}>Projects</a></li>
+        <li><a href="#experience" className={`${styles.tab} ${styles.experience}`}>Experience</a></li>
+      </ul>
     </nav>
-    )
-
+  );
 }
+
+export default Navbar;
